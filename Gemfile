@@ -20,6 +20,7 @@ gem "figaro"
 gem 'kaminari'  #分页
 gem "tabs_on_rails"
 gem 'carrierwave' #图片上传
+gem "wysiwyg-rails" #编辑器
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
