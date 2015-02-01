@@ -1,4 +1,4 @@
-if Rails.env.production?
+if ENV['RACK_ENV'] == 'production'
   source 'https://rubygems.org'
 else
   source 'https://ruby.taobao.org'

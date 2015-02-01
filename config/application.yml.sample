@@ -16,7 +16,7 @@ DATABASE_NAME: "Vblog"
 DATABASE_USER: "vblog"
 DATABASE_PASSWORD: ""
 
-ENV: "production"
+RACK_ENV: "production"
 
 WEB_CONCURRENCY: 2
 MIN_THREADS: 4
