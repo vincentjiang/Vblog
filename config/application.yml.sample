@@ -9,3 +9,15 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+BLOG_NAME: "VincentJiang's Blog"
+
+DATABASE_NAME: "Vblog"
+DATABASE_USER: "vblog"
+DATABASE_PASSWORD: ""
+
+ENV: "production"
+
+WEB_CONCURRENCY: 2
+MIN_THREADS: 4
+MAX_THREADS: 20

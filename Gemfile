@@ -1,9 +1,12 @@
-source 'https://ruby.taobao.org'
+if ENV['ENV'] == "production"
+  source 'https://rubygems.org'
+else
+  source 'https://ruby.taobao.org'
+end
 
 ruby '2.2.0'
 
 gem 'rails', '4.2.0'
-gem 'mysql2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -22,13 +25,12 @@ gem "tabs_on_rails"
 gem 'carrierwave' #图片上传
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use Unicorn as the app server
-gem 'unicorn'
-
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+# Use puma as the app server
+gem 'puma'
+gem 'foreman'
 
 group :development, :test do
+  gem 'mysql2'
   gem 'byebug'
   gem "better_errors"
   gem 'spring'
@@ -39,4 +41,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem "launchy"
   gem "selenium-webdriver"
+end
+
+# Deploy to heroku, so use pg as database
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end

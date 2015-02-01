@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: Vblog_production
-  username: Vblog
-  password: <%= ENV['VBLOG_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: <%= ENV['DATABASE_NAME']%>
+  username: <%= ENV['DATABASE_USERNAME']%>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

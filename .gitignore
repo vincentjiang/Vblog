@@ -12,6 +12,14 @@
 !/log/.keep
 /tmp
 
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+
 # Ignore application configuration
 /config/application.yml
-/db/database.yml
+/config/database.yml
