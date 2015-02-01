@@ -5,6 +5,7 @@ threads min_threads, max_threads
 
 preload_app!
 
+# puma on heroku use ENV['RACK_ENV'] to detect the environment.
 if ENV['RACK_ENV'] == 'production'
   port ENV['PORT'] || 3000
 else
