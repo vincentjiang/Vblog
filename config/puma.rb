@@ -5,7 +5,11 @@ threads min_threads, max_threads
 
 preload_app!
 
-bind 'tcp://0.0.0.0:3000'
+if ENV['RACK_ENV'] == 'production'
+  port ENV['PORT'] || 3000
+else
+  bind 'tcp://0.0.0.0:3000'
+end
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
