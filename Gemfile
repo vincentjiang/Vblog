@@ -1,4 +1,4 @@
-if ENV['ENV'] == "production"
+if Rails.env.production?
   source 'https://rubygems.org'
 else
   source 'https://ruby.taobao.org'

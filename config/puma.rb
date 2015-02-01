@@ -6,7 +6,7 @@ threads min_threads, max_threads
 preload_app!
 
 bind 'tcp://0.0.0.0:3000'
-environment ENV['RACK_ENV'] || 'development'
+environment ENV['ENV'] || 'development'
 
 on_worker_boot do
   # Worker specific setup for Rails 4.1+
