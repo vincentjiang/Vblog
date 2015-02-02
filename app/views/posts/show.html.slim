@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @post.title
+p
+  strong Category:
+  = @post.category
+p
+  strong Content:
+  = @post.content
+p
+  strong Publish at:
+  = @post.publish_at
+
+= link_to 'Edit', edit_post_path(@post)
+'|
+= link_to 'Back', posts_path
