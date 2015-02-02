@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  resources :posts
-
-  resources :categories
 
   root 'home#welcome'
 
   get 'home/welcome'
+  get 'about', to: 'home#about'
+  resources :posts do
+    collection do
+      get 'work', to: 'posts#work'
+      get 'life', to: 'posts#life'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

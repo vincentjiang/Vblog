@@ -19,11 +19,11 @@ html
           li
             = link_to "Home", root_path
           li
-            = link_to "Work", root_path
+            = link_to "Work", work_posts_path
           li
-            = link_to "Life", root_path
+            = link_to "Life", life_posts_path
           li
-            = link_to "About", root_path
+            = link_to "About", about_path
       main
         == yield
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
