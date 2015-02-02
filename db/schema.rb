@@ -11,16 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112052045) do
+ActiveRecord::Schema.define(version: 20150202163300) do
 
-  create_table "posts", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.string   "category",   limit: 255
-    t.text     "content",    limit: 65535
-    t.string   "link",       limit: 255
-    t.boolean  "published",  limit: 1,     default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.integer  "category_id", limit: 4
+    t.text     "content",     limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+
+  add_foreign_key "posts", "categories"
 end
