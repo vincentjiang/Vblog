@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+
   root 'home#welcome'
 
   get 'home/welcome'

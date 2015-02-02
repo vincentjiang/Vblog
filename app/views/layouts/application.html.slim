@@ -11,5 +11,19 @@ html
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     == csrf_meta_tags
   body
-    == yield
+    .container
+      header.text-center
+        h1
+          = link_to "VincentJiang", root_path, class: "blog-author"
+        ul.list-inline
+          li
+            = link_to "Home", root_path
+          li
+            = link_to "Work", root_path
+          li
+            = link_to "Life", root_path
+          li
+            = link_to "About", root_path
+      main
+        == yield
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
